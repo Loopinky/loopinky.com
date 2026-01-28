@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loopinky - Comics Lettering Workbooks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">Loopinky</div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#free">Free</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <a href="index.html" class="active">EN</a>
+                <a href="fr/index.html">FR</a>
+                <a href="de/index.html">DE</a>
+                <a href="es/index.html">ES</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="explosion-badge">NEW!</div>
+            <h1>Learn <span class="highlight">Comics Lettering</span> like a Pro!</h1>
+            <p>Practice workbooks to master 10 bold lettering styles</p>
+            <a href="#books" class="btn btn-primary">See the books</a>
+            <a href="#free" class="btn btn-secondary">Free download</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/EN 1ere couv comics 1.jpg" alt="Comics Lettering Vol.1">
+        </div>
+    </section>
+
+    <!-- LEAD MAGNET SECTION (FREE) -->
+    <section id="free" class="lead-magnet">
+        <div class="comic-burst">
+            <span>FREE!</span>
+        </div>
+        <div class="lead-content">
+            <h2>Get 10 FREE Practice Pages</h2>
+            <p>Discover the WHOOSH style and start practicing right now!</p>
+            <ul class="benefits">
+                <li>10 lettering practice pages</li>
+                <li>Complete WHOOSH style (A-Z)</li>
+                <li>High quality PDF to print</li>
+                <li>Instant access by email</li>
+            </ul>
+
+            <!-- EMAIL CAPTURE FORM -->
+            <form class="capture-form" action="LIEN_SYSTEME_IO" method="POST">
+                <input type="text" name="prenom" placeholder="Your first name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit" class="btn btn-cta">
+                    Get my free PDF
+                </button>
+                <p class="privacy">No spam. You can unsubscribe at any time.</p>
+            </form>
+        </div>
+        <div class="lead-preview">
+            <img src="images/whoosh.png" alt="WHOOSH exercises preview">
+        </div>
+    </section>
+
+    <!-- BOOKS SECTION -->
+    <section id="books">
+        <h2>My Collection</h2>
+        <p class="intro">Available on Amazon in English, French, German and Spanish</p>
+
+        <div class="grille-livres">
+            <!-- BOOK 1 - Comics Lettering Vol.1 -->
+            <article class="carte-livre">
+                <div class="badge-pages">210 pages</div>
+                <img src="images/EN 1ere couv comics 1.jpg" alt="Comics Lettering Vol.1">
+                <h3>Comics Lettering Vol.1</h3>
+                <p>10 bold & expressive styles. Complete alphabet A-Z, numbers and punctuation.</p>
+                <div class="styles-preview">
+                    <span>WHOOSH</span>
+                    <span>BAM!</span>
+                    <span>BLOB</span>
+                    <span>YOOP</span>
+                    <span>+6</span>
+                </div>
+                <a href="https://www.amazon.com/dp/B0G349NY3R" class="btn-amazon" target="_blank">Buy on Amazon</a>
+            </article>
+
+            <!-- BOOK 2 - Comics Lettering Vol.2 -->
+            <article class="carte-livre">
+                <div class="badge-pages">210 pages</div>
+                <img src="images/1ere couv En comics 2.jpg" alt="Comics Lettering Vol.2">
+                <h3>Comics Lettering Vol.2</h3>
+                <p>10 dynamic & graphic styles. Alphabet A-Z, numbers and punctuation.</p>
+                <div class="styles-preview">
+                    <span>10 styles</span>
+                    <span>BONUS $50</span>
+                </div>
+                <a href="https://www.amazon.com/dp/B0GF8ZRYX9" class="btn-amazon" target="_blank">Buy on Amazon</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>Who is Loopinky?</h2>
+        <div class="auteur-contenu">
+            <div class="auteur-avatar">L</div>
+            <p>Passionate about lettering and comics, I create workbooks
+            to help beginners master the art of comic book lettering.
+            My books are designed to be practical, progressive and fun!</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/loopinky.design/" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61581735821493" target="_blank" class="social-btn">Facebook</a>
+                <a href="https://www.youtube.com/channel/UCwpU_Mb2COowMNGe-6QAAOw" target="_blank" class="social-btn">YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Loopinky - All rights reserved</p>
+        <p><a href="legal.html">Legal notice</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+</body>
+</html>
