@@ -1,0 +1,790 @@
+/* ===========================================
+   LOOPINKY - STYLE COMICS
+   Couleurs: Cyan #00D4FF, Jaune #FFD93D, Rouge #FF6B6B, Rose #FF4757
+   =========================================== */
+
+/* VARIABLES CSS */
+:root {
+    --cyan: #00D4FF;
+    --jaune: #FFD93D;
+    --rouge: #FF6B6B;
+    --rose: #FF4757;
+    --noir: #1a1a2e;
+    --blanc: #ffffff;
+    --gris: #f8f9fa;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* POLICES */
+body {
+    font-family: 'Comic Neue', cursive, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--noir);
+    background-color: var(--blanc);
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+}
+
+/* ===========================================
+   NAVIGATION
+   =========================================== */
+header {
+    background: var(--noir);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 0 var(--jaune);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--jaune);
+    font-size: 2rem;
+    text-shadow: 3px 3px 0 var(--rose);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    color: var(--blanc);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.menu a:hover {
+    color: var(--cyan);
+}
+
+/* LANGUAGE SWITCHER */
+.lang-switcher {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-switcher a {
+    color: var(--blanc);
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.lang-switcher a:hover {
+    color: var(--jaune);
+}
+
+.lang-switcher a.active {
+    background: var(--jaune);
+    color: var(--noir);
+    border: 2px solid var(--noir);
+}
+
+/* ===========================================
+   HERO SECTION
+   =========================================== */
+.hero {
+    background:
+        radial-gradient(circle at 20% 80%, var(--jaune) 0%, transparent 30%),
+        radial-gradient(circle at 80% 20%, var(--rose) 0%, transparent 30%),
+        linear-gradient(135deg, var(--cyan) 0%, #0099cc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    max-width: 500px;
+    position: relative;
+}
+
+.explosion-badge {
+    background: var(--jaune);
+    color: var(--noir);
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: inline-block;
+    transform: rotate(-5deg);
+    border: 3px solid var(--noir);
+    box-shadow: 4px 4px 0 var(--noir);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--blanc);
+    text-shadow: 4px 4px 0 var(--noir);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero h1 .highlight {
+    color: var(--jaune);
+    display: block;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--blanc);
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 0 var(--noir);
+}
+
+.hero-image img {
+    max-width: 350px;
+    border: 5px solid var(--noir);
+    box-shadow: 10px 10px 0 var(--jaune);
+    transform: rotate(3deg);
+    transition: transform 0.3s;
+}
+
+.hero-image img:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* BOUTONS */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 3px solid var(--noir);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+.btn-primary {
+    background: var(--jaune);
+    color: var(--noir);
+    box-shadow: 4px 4px 0 var(--noir);
+}
+
+.btn-primary:hover {
+    box-shadow: 2px 2px 0 var(--noir);
+    transform: translate(2px, 2px);
+}
+
+.btn-secondary {
+    background: var(--blanc);
+    color: var(--noir);
+    box-shadow: 4px 4px 0 var(--noir);
+}
+
+.btn-secondary:hover {
+    background: var(--gris);
+    box-shadow: 2px 2px 0 var(--noir);
+    transform: translate(2px, 2px);
+}
+
+/* ===========================================
+   SECTION LEAD MAGNET
+   =========================================== */
+.lead-magnet {
+    background: var(--jaune);
+    padding: 80px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    border-top: 5px solid var(--noir);
+    border-bottom: 5px solid var(--noir);
+}
+
+.comic-burst {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rose);
+    color: var(--blanc);
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    padding: 20px 40px;
+    border: 4px solid var(--noir);
+    box-shadow: 5px 5px 0 var(--noir);
+    clip-path: polygon(
+        0% 20%, 10% 0%, 20% 20%, 30% 0%, 40% 20%, 50% 0%,
+        60% 20%, 70% 0%, 80% 20%, 90% 0%, 100% 20%,
+        100% 80%, 90% 100%, 80% 80%, 70% 100%, 60% 80%, 50% 100%,
+        40% 80%, 30% 100%, 20% 80%, 10% 100%, 0% 80%
+    );
+}
+
+.lead-content {
+    max-width: 450px;
+}
+
+.lead-content h2 {
+    font-size: 2.5rem;
+    color: var(--noir);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0 var(--blanc);
+}
+
+.lead-content > p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--noir);
+}
+
+.benefits {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.benefits li {
+    padding: 8px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.benefits li::before {
+    content: "POW!";
+    position: absolute;
+    left: 0;
+    font-family: 'Bangers', cursive;
+    color: var(--rose);
+    font-size: 0.8rem;
+}
+
+/* FORMULAIRE */
+.capture-form {
+    background: var(--blanc);
+    padding: 25px;
+    border: 4px solid var(--noir);
+    box-shadow: 6px 6px 0 var(--noir);
+}
+
+.capture-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 3px solid var(--noir);
+    font-size: 1rem;
+    font-family: 'Comic Neue', cursive;
+}
+
+.capture-form input:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3);
+}
+
+.btn-cta {
+    width: 100%;
+    background: var(--rose);
+    color: var(--blanc);
+    border: 3px solid var(--noir);
+    padding: 18px;
+    font-family: 'Bangers', cursive;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--noir);
+    transition: all 0.2s;
+}
+
+.btn-cta:hover {
+    background: var(--rouge);
+    box-shadow: 2px 2px 0 var(--noir);
+    transform: translate(2px, 2px);
+}
+
+.privacy {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.lead-preview img {
+    max-width: 300px;
+    border: 4px solid var(--noir);
+    box-shadow: 8px 8px 0 var(--rose);
+    background: var(--blanc);
+}
+
+/* ===========================================
+   SECTION LIVRES
+   =========================================== */
+#livres {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#livres h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--noir);
+    text-shadow: 3px 3px 0 var(--cyan);
+}
+
+.intro {
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+}
+
+.grille-livres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+.carte-livre {
+    background: var(--blanc);
+    border: 4px solid var(--noir);
+    padding: 30px 25px;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--cyan);
+    transition: all 0.3s;
+}
+
+.carte-livre:hover {
+    box-shadow: 4px 4px 0 var(--cyan);
+    transform: translate(4px, 4px);
+}
+
+.badge-pages, .badge-soon {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--rose);
+    color: var(--blanc);
+    font-family: 'Bangers', cursive;
+    padding: 8px 15px;
+    border: 2px solid var(--noir);
+}
+
+.badge-soon {
+    background: var(--jaune);
+    color: var(--noir);
+}
+
+.carte-livre img {
+    width: 100%;
+    max-width: 220px;
+    border: 3px solid var(--noir);
+    margin-bottom: 20px;
+}
+
+.carte-livre h3 {
+    font-size: 1.8rem;
+    color: var(--noir);
+    margin-bottom: 10px;
+}
+
+.carte-livre p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.styles-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.styles-preview span {
+    background: var(--gris);
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 2px solid var(--noir);
+}
+
+.langues {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+.btn-amazon {
+    display: inline-block;
+    background: #FF9900;
+    color: var(--blanc);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    border: 3px solid var(--noir);
+    box-shadow: 4px 4px 0 var(--noir);
+    transition: all 0.2s;
+}
+
+.btn-amazon:hover {
+    background: #e68a00;
+    box-shadow: 2px 2px 0 var(--noir);
+    transform: translate(2px, 2px);
+}
+
+/* Coming Soon */
+.coming-soon {
+    opacity: 0.8;
+}
+
+.placeholder-cover {
+    width: 200px;
+    height: 260px;
+    background: var(--gris);
+    border: 3px dashed var(--noir);
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-family: 'Bangers', cursive;
+    color: #ccc;
+}
+
+.btn-notify {
+    background: var(--cyan);
+    color: var(--noir);
+    padding: 12px 30px;
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    border: 3px solid var(--noir);
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--noir);
+    transition: all 0.2s;
+}
+
+.btn-notify:hover {
+    box-shadow: 2px 2px 0 var(--noir);
+    transform: translate(2px, 2px);
+}
+
+/* ===========================================
+   SECTION AUTEUR
+   =========================================== */
+#auteur {
+    background: linear-gradient(135deg, var(--gris) 0%, #e8e8e8 100%);
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 5px solid var(--noir);
+}
+
+#auteur h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--noir);
+}
+
+.auteur-contenu {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.auteur-avatar {
+    width: 120px;
+    height: 120px;
+    background: var(--cyan);
+    border: 4px solid var(--noir);
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    color: var(--blanc);
+    box-shadow: 5px 5px 0 var(--noir);
+}
+
+.auteur-contenu p {
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-btn {
+    background: var(--blanc);
+    color: var(--noir);
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 3px solid var(--noir);
+    box-shadow: 3px 3px 0 var(--noir);
+    transition: all 0.2s;
+}
+
+.social-btn:hover {
+    background: var(--jaune);
+    box-shadow: 1px 1px 0 var(--noir);
+    transform: translate(2px, 2px);
+}
+
+/* ===========================================
+   PAGE CONTENT (Legal, Contact)
+   =========================================== */
+.page-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+    min-height: 80vh;
+}
+
+.page-content h1 {
+    font-size: 3rem;
+    color: var(--noir);
+    text-shadow: 3px 3px 0 var(--cyan);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.page-content h2 {
+    font-size: 1.5rem;
+    color: var(--rose);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--jaune);
+    padding-bottom: 5px;
+}
+
+.page-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.page-content a {
+    color: var(--rose);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+/* CONTACT PAGE */
+.contact-page .intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-form {
+    background: var(--blanc);
+    padding: 30px;
+    border: 4px solid var(--noir);
+    box-shadow: 8px 8px 0 var(--cyan);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--noir);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 3px solid var(--noir);
+    font-size: 1rem;
+    font-family: 'Comic Neue', cursive;
+    background: var(--blanc);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: var(--gris);
+    padding: 25px;
+    border: 3px solid var(--noir);
+    box-shadow: 5px 5px 0 var(--jaune);
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    color: var(--noir);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    margin: 0;
+}
+
+/* Logo link in header */
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+footer {
+    background: var(--noir);
+    color: var(--blanc);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer a {
+    color: var(--cyan);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image img {
+        max-width: 280px;
+    }
+
+    .menu {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .lead-magnet {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lead-content h2 {
+        font-size: 2rem;
+    }
+
+    .comic-burst {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+
+    #livres h2 {
+        font-size: 2.2rem;
+    }
+
+    .grille-livres {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        gap: 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
