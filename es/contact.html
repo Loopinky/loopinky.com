@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Loopinky</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Loopinky</a></div>
+            <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#libros">Libros</a></li>
+                <li><a href="index.html#gratis">Gratis</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="index.html#sobre">Sobre mí</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <a href="../contact.html">EN</a>
+                <a href="../fr/contact.html">FR</a>
+                <a href="../de/contact.html">DE</a>
+                <a href="contact.html" class="active">ES</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO CONTACTO -->
+    <section class="page-content contact-page">
+        <h1>Contacto</h1>
+        <p class="intro">¿Tienes una pregunta? ¿Quieres colaborar? ¡Envíame un mensaje!</p>
+
+        <div class="contact-container">
+            <form class="contact-form" action="LIEN_FORMSPREE_OU_SYSTEME_IO" method="POST">
+                <div class="form-group">
+                    <label for="name">Tu nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Juan García" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Tu email</label>
+                    <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">-- Seleccionar --</option>
+                        <option value="question">Pregunta sobre un libro</option>
+                        <option value="collaboration">Propuesta de colaboración</option>
+                        <option value="feedback">Opinión</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tu mensaje</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-cta">Enviar mensaje</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:hello.loopinky@gmail.com">hello.loopinky@gmail.com</a></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Redes sociales</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/loopinky.design/" target="_blank" class="social-btn">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61581735821493" target="_blank" class="social-btn">Facebook</a>
+                        <a href="https://www.youtube.com/channel/UCwpU_Mb2COowMNGe-6QAAOw" target="_blank" class="social-btn">YouTube</a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Tiempo de respuesta</h3>
+                    <p>Normalmente respondo en 24-48 horas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Loopinky - Todos los derechos reservados</p>
+        <p><a href="legal.html">Aviso legal</a> | <a href="contact.html">Contacto</a></p>
+    </footer>
+    <script src="../menu.js"></script>
+</body>
+</html>

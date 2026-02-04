@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Puzzle - Loopinky</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Loopinky</a></div>
+            <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="menu">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#livres">Livres</a></li>
+                <li><a href="index.html#gratuit">Gratuit</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="index.html#auteur">Auteur</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <a href="../puzzle.html">EN</a>
+                <a href="puzzle.html" class="active">FR</a>
+                <a href="../de/puzzle.html">DE</a>
+                <a href="../es/puzzle.html">ES</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="puzzle-page">
+        <div class="puzzle-container">
+            <h1>Puzzle <span class="highlight">Challenge</span></h1>
+            <p class="puzzle-intro">Glissez et deposez les pieces pour reconstituer l'image !</p>
+
+            <div class="puzzle-wrapper">
+                <div class="puzzle-grid" id="puzzleGrid"></div>
+            </div>
+
+            <div class="puzzle-controls">
+                <button class="btn btn-primary" id="shuffleBtn">Melanger</button>
+                <button class="btn btn-secondary" id="randomImageBtn">Nouvelle image</button>
+                <button class="btn btn-secondary" id="showOriginalBtn">Voir l'original</button>
+            </div>
+
+            <div class="puzzle-stats">
+                <div class="stat">
+                    <span class="stat-label">Coups</span>
+                    <span class="stat-value" id="moveCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Temps</span>
+                    <span class="stat-value" id="timer">00:00</span>
+                </div>
+            </div>
+
+            <div class="victory-message" id="victoryMessage">
+                <h2>Felicitations !</h2>
+                <p>Puzzle resolu en <span id="finalMoves">0</span> coups et <span id="finalTime">00:00</span> !</p>
+                <button class="btn btn-primary" id="playAgainBtn">Rejouer</button>
+            </div>
+        </div>
+
+        <div class="original-modal" id="originalModal">
+            <div class="modal-content">
+                <img id="originalImage" src="" alt="Image originale">
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Loopinky - Tous droits reserves</p>
+        <p><a href="legal.html">Mentions legales</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+
+    <script>
+        const PUZZLE_IMAGES = [
+            { src: '../images/EN 1ere couv comics 1.jpg', name: 'Comics Vol.1', type: 'portrait' },
+            { src: '../images/1ere couv En comics 2.jpg', name: 'Comics Vol.2', type: 'portrait' },
+            { src: '../images/puzzle/0045_3_a-dramatic-comic-book-page-illustration-_EY7Rn3myQEGVBLAvm9aAYA_XC8tRT7PRiieWnhPZ4dR8Q.png', name: 'Comic Drama', type: 'square' },
+            { src: '../images/puzzle/0057_4_a-vibrant-digital-illustration-in-a-clas_ssmwLbdCRsaWXr8aMjIGjA_SvyVVWltQ32p_NiuR-KJHQ.png', name: 'Vibrant Digital', type: 'square' },
+            { src: '../images/puzzle/0060_2_a-digital-illustration-in-a-classic-comi_NSkpXxtkQFSV9sfcsKEihg_fCg4qS4-S9uyN0OftyUNAQ.png', name: 'Classic Comic', type: 'square' },
+            { src: '../images/puzzle/0061_1_a-digital-illustration-in-a-classic-comi_03Yf9FCXR7Oew3xp8a1pAA_h3OQOPdESt-J1nCS43i9CQ.png', name: 'Digital Art 1', type: 'square' },
+            { src: '../images/puzzle/0061_2_a-digital-illustration-in-a-classic-comi_0e-W3fwkQSi-jr3n3NFHKA_h3OQOPdESt-J1nCS43i9CQ.png', name: 'Digital Art 2', type: 'square' },
+            { src: '../images/puzzle/0061_3_a-dynamic-comic-book-panel-illustration-_YnmnGn7vRC-hLMvWmY-htA_h3OQOPdESt-J1nCS43i9CQ.png', name: 'Dynamic Panel', type: 'square' },
+            { src: '../images/puzzle/0061_4_a-dynamic-comic-book-panel-illustration-_z87fsal0QCWxlAEcO-1ecg_h3OQOPdESt-J1nCS43i9CQ.png', name: 'Comic Panel', type: 'square' },
+            { src: '../images/puzzle/a-cheerful-birthday-greeting-card-depict_qHxDHVxiSSO7Irqg0aJBKA_X_gPl-aqQ_-UbFdIYkTRhA.png', name: 'Birthday Card', type: 'square' },
+            { src: '../images/puzzle/a-cinematic-portrait-photograph-captures_qMRbTRRnReKYfo3x90S1CQ_Fp-5WywWRjW0cuFizJIx0A.png', name: 'Portrait 1', type: 'square' },
+            { src: '../images/puzzle/a-cinematic-portrait-photograph-of-a-con_y_Sxp58IS9269FayarnuMQ_L1vQQJrhTAeeAe8YyaeqWA.png', name: 'Portrait 2', type: 'square' },
+            { src: '../images/puzzle/a-delicate-puzzle-shaped-illustration-in_VJJj-putQyGxv-4npa84bg_e6P6HE7PRtqAlsXS3HC-5w.png', name: 'Puzzle Art', type: 'square' },
+            { src: '../images/puzzle/a-detailed-colored-line-art-illustration_n3yWMbD1Sbyg35uXrwQDLg__sWGb6pzQxaP-sHxxjFjOA (1).png', name: 'Line Art', type: 'square' },
+            { src: '../images/puzzle/a-detailed-illustration-of-an-open-noteb_CSG01_0pSPmlel-tobTHzQ__cyFDdHEQSuJkGSCbYK_6g.png', name: 'Notebook', type: 'square' },
+            { src: '../images/puzzle/a-dynamic-comic-book-frame-in-a-vibrant-_qpzYSF2USv2Aj4IIb3cgpw_7F2C7UvRTo2ftEsgUWmzKw.png', name: 'Comic Frame', type: 'square' },
+            { src: '../images/puzzle/a-dynamic-comic-book-panel-illustration-_PseJWhEmQKawGiOjjDkNBw_i4m8t-qERYCrExbAm8ispQ (1).png', name: 'Action Panel', type: 'square' },
+            { src: '../images/puzzle/a-dynamic-comic-book-style-illustration-_QOjhbry9QM60gE8G4PWp5Q_rVRGV43cSc62zlXUBskR7w.png', name: 'Comic Style', type: 'square' },
+            { src: '../images/puzzle/a-logo-design-featuring-the-text-loopink_CAlTAeRxQ--DjOw362UfKg_kcChF3GjQD2a2GD6FOJcqA.png', name: 'Loopinky Logo', type: 'square' },
+            { src: '../images/puzzle/a-logo-design-featuring-the-word-calligr_6wxLQg-bRq2JSLj0k-ZRvg_AQLdAEt_RQKytQ9deqqeQg.png', name: 'Calligraphy', type: 'square' },
+            { src: '../images/puzzle/a-photograph-of-an-antique-fountain-pen-_aoyjLXOASOek5OwYNJPuHg_WlxyJv74R16YCBo9ML7Nxw.png', name: 'Fountain Pen', type: 'square' },
+            { src: '../images/puzzle/a-photograph-of-a-pristine-beach-with-sw_qaCd7pIRQ5--fsRprBqBQQ_T2j4F6XjTset4aE_pytyng (1).png', name: 'Beach', type: 'square' },
+            { src: '../images/puzzle/a-softly-lit-intimate-photograph-focuses_KRUalkfzT8mr7RCr0JP5OA_B3P8LNzsRaygECA1UrCH9Q.png', name: 'Soft Light', type: 'square' },
+            { src: '../images/puzzle/a-vibrant-comic-book-style-painting-depi_VyMnW4LFSrS4B0KrlUifZQ_hQVtVEM4SdORQFGquJqF6g.png', name: 'Comic Painting', type: 'square' },
+            { src: '../images/puzzle/a-vibrant-comic-style-illustration-depic_53srMWXcS-2SKhKOgBwtVQ_qQYzyZuuRZ6fY7y0_6S7rw.png', name: 'Vibrant Comic 1', type: 'square' },
+            { src: '../images/puzzle/a-vibrant-comic-style-illustration-depic_hAlt-W7ETyCk_GWCFv_PxA__k5JlsnZSwu0FG6G42V9Bg (2).png', name: 'Vibrant Comic 2', type: 'square' },
+            { src: '../images/puzzle/a-vibrant-comic-style-illustration-depic_QPWDzCzbSVGlPywGMRFAFw_07O-BZQXSNKDl-o_mb8wFw (1).png', name: 'Vibrant Comic 3', type: 'square' },
+            { src: '../images/puzzle/a-vintage-style-illustrated-book-cover-d_Ra2N82rKTTyMdiiKMkZRhw_PYwxcMe9TmyctOek7j4Z7w.png', name: 'Vintage Cover', type: 'square' },
+            { src: '../images/puzzle/a-vintage-style-wanted-poster-in-a-horiz_187PHgUtSCqAj8W5_0CKMQ_7pRA6VCwSbiMmJMON1D-YA.png', name: 'Wanted Poster', type: 'square' },
+            { src: '../images/puzzle/a-watercolor-painting-of-a-bright-red-an_gaZwhOdSSNqoaR4TBknTug_wV6ll7iiQ9aH8aktvk7HLg.png', name: 'Watercolor', type: 'square' },
+            { src: '../images/puzzle/a-whimsical-illustration-depicting-a-ser_C11cjlZtSyWV1HoLy5m0qw_KFjoOF7ASsi6b7Ch4Rgnfg.png', name: 'Whimsical', type: 'square' },
+            { src: '../images/puzzle/background_removed_image_1qSUzyM0QOG7sXKT-sv21A.png', name: 'Silhouette', type: 'square' },
+            { src: '../images/puzzle/comic-style-poster-illustration-vibrant-_Amxt19p8S4uNKl7UmIlX1w_N5h2oABiQxmy0X7-iqA_NA.png', name: 'Comic Poster', type: 'square' },
+        ];
+
+        const puzzleGrid = document.getElementById('puzzleGrid');
+        const shuffleBtn = document.getElementById('shuffleBtn');
+        const randomImageBtn = document.getElementById('randomImageBtn');
+        const showOriginalBtn = document.getElementById('showOriginalBtn');
+        const originalModal = document.getElementById('originalModal');
+        const closeModal = document.getElementById('closeModal');
+        const originalImage = document.getElementById('originalImage');
+        const moveCountEl = document.getElementById('moveCount');
+        const timerEl = document.getElementById('timer');
+        const victoryMessage = document.getElementById('victoryMessage');
+        const playAgainBtn = document.getElementById('playAgainBtn');
+        const finalMovesEl = document.getElementById('finalMoves');
+        const finalTimeEl = document.getElementById('finalTime');
+
+        let GRID_COLS = 3, GRID_ROWS = 3, TOTAL_PIECES = 9;
+        let pieces = [], currentImage = '', currentImageIndex = -1;
+        let moveCount = 0, timerInterval = null, seconds = 0, gameStarted = false, draggedPiece = null;
+
+        function pickRandomImage() {
+            let newIndex;
+            do { newIndex = Math.floor(Math.random() * PUZZLE_IMAGES.length); }
+            while (newIndex === currentImageIndex && PUZZLE_IMAGES.length > 1);
+            currentImageIndex = newIndex;
+            const img = PUZZLE_IMAGES[newIndex];
+            currentImage = img.src;
+            if (img.type === 'square') { GRID_COLS = 3; GRID_ROWS = 3; }
+            else { GRID_COLS = 3; GRID_ROWS = 4; }
+            TOTAL_PIECES = GRID_COLS * GRID_ROWS;
+            updateGridStyle(); initPuzzle(); resetGame(); shufflePuzzle();
+        }
+
+        function updateGridStyle() {
+            puzzleGrid.style.gridTemplateColumns = `repeat(${GRID_COLS}, 1fr)`;
+            puzzleGrid.style.gridTemplateRows = `repeat(${GRID_ROWS}, 1fr)`;
+            puzzleGrid.style.width = `${GRID_COLS * 100 + (GRID_COLS + 1) * 4}px`;
+            puzzleGrid.style.height = `${GRID_ROWS * 100 + (GRID_ROWS + 1) * 4}px`;
+        }
+
+        function initPuzzle() {
+            puzzleGrid.innerHTML = ''; pieces = [];
+            for (let i = 0; i < TOTAL_PIECES; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'puzzle-piece';
+                piece.dataset.correctPosition = i; piece.dataset.currentPosition = i;
+                const row = Math.floor(i / GRID_COLS), col = i % GRID_COLS;
+                piece.style.backgroundImage = `url('${currentImage}')`;
+                piece.style.backgroundSize = `${GRID_COLS * 100}% ${GRID_ROWS * 100}%`;
+                piece.style.backgroundPosition = `${(col / (GRID_COLS - 1)) * 100}% ${(row / (GRID_ROWS - 1)) * 100}%`;
+                piece.draggable = true;
+                piece.addEventListener('dragstart', handleDragStart);
+                piece.addEventListener('dragend', handleDragEnd);
+                piece.addEventListener('dragover', handleDragOver);
+                piece.addEventListener('drop', handleDrop);
+                piece.addEventListener('touchstart', handleTouchStart, { passive: false });
+                piece.addEventListener('touchmove', handleTouchMove, { passive: false });
+                piece.addEventListener('touchend', handleTouchEnd);
+                pieces.push(piece); puzzleGrid.appendChild(piece);
+            }
+            originalImage.src = currentImage;
+        }
+
+        function shufflePuzzle() {
+            resetGame();
+            const positions = [...Array(TOTAL_PIECES).keys()];
+            for (let i = positions.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [positions[i], positions[j]] = [positions[j], positions[i]]; }
+            positions.forEach((pos, index) => { pieces[pos].dataset.currentPosition = index; });
+            const sortedPieces = [...pieces].sort((a, b) => parseInt(a.dataset.currentPosition) - parseInt(b.dataset.currentPosition));
+            puzzleGrid.innerHTML = ''; sortedPieces.forEach(piece => puzzleGrid.appendChild(piece));
+            gameStarted = true; startTimer();
+        }
+
+        function resetGame() { moveCount = 0; seconds = 0; gameStarted = false; moveCountEl.textContent = '0'; timerEl.textContent = '00:00'; victoryMessage.classList.remove('active'); if (timerInterval) { clearInterval(timerInterval); timerInterval = null; } }
+        function startTimer() { if (timerInterval) clearInterval(timerInterval); timerInterval = setInterval(() => { seconds++; timerEl.textContent = `${Math.floor(seconds/60).toString().padStart(2,'0')}:${(seconds%60).toString().padStart(2,'0')}`; }, 1000); }
+
+        function handleDragStart(e) { if (!gameStarted) return; draggedPiece = this; this.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; }
+        function handleDragEnd() { this.classList.remove('dragging'); draggedPiece = null; }
+        function handleDragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; }
+        function handleDrop(e) { e.preventDefault(); if (!draggedPiece || draggedPiece === this) return; swapPieces(draggedPiece, this); }
+
+        let touchedPiece = null;
+        function handleTouchStart(e) { if (!gameStarted) return; e.preventDefault(); touchedPiece = this; this.classList.add('dragging'); }
+        function handleTouchMove(e) { if (!touchedPiece) return; e.preventDefault(); }
+        function handleTouchEnd(e) { if (!touchedPiece) return; const touch = e.changedTouches[0]; const target = document.elementFromPoint(touch.clientX, touch.clientY); if (target?.classList.contains('puzzle-piece') && target !== touchedPiece) swapPieces(touchedPiece, target); touchedPiece.classList.remove('dragging'); touchedPiece = null; }
+
+        function swapPieces(p1, p2) {
+            const all = Array.from(puzzleGrid.children), i1 = all.indexOf(p1), i2 = all.indexOf(p2);
+            [p1.dataset.currentPosition, p2.dataset.currentPosition] = [p2.dataset.currentPosition, p1.dataset.currentPosition];
+            if (i1 < i2) { puzzleGrid.insertBefore(p2, p1); puzzleGrid.insertBefore(p1, all[i2 + 1] || null); }
+            else { puzzleGrid.insertBefore(p1, p2); puzzleGrid.insertBefore(p2, all[i1 + 1] || null); }
+            moveCount++; moveCountEl.textContent = moveCount; checkVictory();
+        }
+
+        function checkVictory() {
+            if (Array.from(puzzleGrid.children).every((p, i) => parseInt(p.dataset.correctPosition) === i)) {
+                gameStarted = false; clearInterval(timerInterval);
+                finalMovesEl.textContent = moveCount; finalTimeEl.textContent = timerEl.textContent;
+                setTimeout(() => victoryMessage.classList.add('active'), 300);
+            }
+        }
+
+        shuffleBtn.addEventListener('click', shufflePuzzle);
+        randomImageBtn.addEventListener('click', pickRandomImage);
+        showOriginalBtn.addEventListener('click', () => originalModal.classList.add('active'));
+        closeModal.addEventListener('click', () => originalModal.classList.remove('active'));
+        originalModal.addEventListener('click', (e) => { if (e.target === originalModal) originalModal.classList.remove('active'); });
+        playAgainBtn.addEventListener('click', () => { victoryMessage.classList.remove('active'); pickRandomImage(); });
+
+        pickRandomImage();
+    </script>
+    <script src="../menu.js"></script>
+</body>
+</html>

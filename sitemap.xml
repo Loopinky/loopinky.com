@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.loopinky.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Puzzle -->
+  <url>
+    <loc>https://www.loopinky.com/puzzle.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://www.loopinky.com/legal.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.loopinky.com/contact.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.loopinky.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/fr/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/de/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/es/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://www.loopinky.com/blog/best-calligraphy-workbooks.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/best-calligraphy-workbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/meilleurs-cahiers-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/beste-kalligraphie-uebungsbuecher.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/mejores-cuadernos-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/fr/blog/meilleurs-cahiers-calligraphie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/best-calligraphy-workbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/meilleurs-cahiers-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/beste-kalligraphie-uebungsbuecher.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/mejores-cuadernos-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/de/blog/beste-kalligraphie-uebungsbuecher.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/best-calligraphy-workbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/meilleurs-cahiers-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/beste-kalligraphie-uebungsbuecher.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/mejores-cuadernos-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/es/blog/mejores-cuadernos-caligrafia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/best-calligraphy-workbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/meilleurs-cahiers-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/beste-kalligraphie-uebungsbuecher.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/mejores-cuadernos-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.loopinky.com/blog/how-to-start-calligraphy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/how-to-start-calligraphy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/debuter-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/kalligraphie-anfaenger.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/empezar-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/fr/blog/debuter-calligraphie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/how-to-start-calligraphy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/debuter-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/kalligraphie-anfaenger.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/empezar-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/de/blog/kalligraphie-anfaenger.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/how-to-start-calligraphy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/debuter-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/kalligraphie-anfaenger.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/empezar-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/es/blog/empezar-caligrafia.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/how-to-start-calligraphy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/debuter-calligraphie.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/kalligraphie-anfaenger.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/empezar-caligrafia.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.loopinky.com/blog/comics-lettering-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/comics-lettering-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/guide-lettering-comics.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/comics-lettering-anleitung.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/guia-lettering-comics.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/fr/blog/guide-lettering-comics.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/comics-lettering-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/guide-lettering-comics.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/comics-lettering-anleitung.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/guia-lettering-comics.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/de/blog/comics-lettering-anleitung.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/comics-lettering-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/guide-lettering-comics.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/comics-lettering-anleitung.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/guia-lettering-comics.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/es/blog/guia-lettering-comics.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.loopinky.com/blog/comics-lettering-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/guide-lettering-comics.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/comics-lettering-anleitung.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/guia-lettering-comics.html"/>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

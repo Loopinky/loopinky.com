@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Loopinky</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Loopinky</a></div>
+            <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="menu">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#livres">Livres</a></li>
+                <li><a href="index.html#gratuit">Gratuit</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="index.html#auteur">À propos</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <a href="../contact.html">EN</a>
+                <a href="contact.html" class="active">FR</a>
+                <a href="../de/contact.html">DE</a>
+                <a href="../es/contact.html">ES</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENU CONTACT -->
+    <section class="page-content contact-page">
+        <h1>Contact</h1>
+        <p class="intro">Une question ? Une proposition de collaboration ? Envoie-moi un message !</p>
+
+        <div class="contact-container">
+            <form class="contact-form" action="LIEN_FORMSPREE_OU_SYSTEME_IO" method="POST">
+                <div class="form-group">
+                    <label for="name">Ton nom</label>
+                    <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Ton email</label>
+                    <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">-- Sélectionner --</option>
+                        <option value="question">Question sur un livre</option>
+                        <option value="collaboration">Proposition de collaboration</option>
+                        <option value="feedback">Retour d'expérience</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Ton message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Écris ton message ici..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-cta">Envoyer le message</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:hello.loopinky@gmail.com">hello.loopinky@gmail.com</a></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Réseaux sociaux</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/loopinky.design/" target="_blank" class="social-btn">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61581735821493" target="_blank" class="social-btn">Facebook</a>
+                        <a href="https://www.youtube.com/channel/UCwpU_Mb2COowMNGe-6QAAOw" target="_blank" class="social-btn">YouTube</a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Délai de réponse</h3>
+                    <p>Je réponds généralement sous 24 à 48 heures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Loopinky - Tous droits réservés</p>
+        <p><a href="legal.html">Mentions légales</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+    <script src="../menu.js"></script>
+</body>
+</html>
