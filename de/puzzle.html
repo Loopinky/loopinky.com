@@ -1,6 +1,14 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPJF7MRWCE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WPJF7MRWCE');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puzzle-Spiel - Loopinky</title>
@@ -16,10 +24,10 @@
             <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
             <ul class="menu">
                 <li><a href="index.html#startseite">Startseite</a></li>
-                <li><a href="index.html#buecher">BÃ¼cher</a></li>
+                <li><a href="index.html#buecher">Bücher</a></li>
                 <li><a href="index.html#kostenlos">Kostenlos</a></li>
                 <li><a href="blog/index.html">Blog</a></li>
-                <li><a href="index.html#ueber">Ãœber uns</a></li>
+                <li><a href="index.html#ueber">Über uns</a></li>
             </ul>
             <div class="lang-switcher">
                 <a href="../puzzle.html">EN</a>
@@ -47,7 +55,7 @@
 
             <div class="puzzle-stats">
                 <div class="stat">
-                    <span class="stat-label">ZÃ¼ge</span>
+                    <span class="stat-label">Züge</span>
                     <span class="stat-value" id="moveCount">0</span>
                 </div>
                 <div class="stat">
@@ -57,8 +65,8 @@
             </div>
 
             <div class="victory-message" id="victoryMessage">
-                <h2>Herzlichen GlÃ¼ckwunsch!</h2>
-                <p>Puzzle gelÃ¶st in <span id="finalMoves">0</span> ZÃ¼gen und <span id="finalTime">00:00</span>!</p>
+                <h2>Herzlichen Glückwunsch!</h2>
+                <p>Puzzle gelöst in <span id="finalMoves">0</span> Zügen und <span id="finalTime">00:00</span>!</p>
                 <button class="btn btn-primary" id="playAgainBtn">Nochmal spielen</button>
             </div>
         </div>
