@@ -1,0 +1,17 @@
+# === Security Headers ===
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# === Block access to .git directory ===
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.git - [F,L]
+</IfModule>
+
+# === Disable directory listing ===
+Options -Indexes
