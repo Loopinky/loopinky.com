@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPJF7MRWCE"></script>
+<!-- Google tag (gtag.js) - loads only after consent -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WPJF7MRWCE');
+  function loadAnalytics(){
+    if(localStorage.getItem('cookies_accepted')==='true'){
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id=G-WPJF7MRWCE';
+      document.head.appendChild(s);
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js',new Date());
+      gtag('config','G-WPJF7MRWCE');
+    }
+  }
+  loadAnalytics();
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,8 +97,36 @@
 
     <footer>
         <p>&copy; 2026 Loopinky - Alle Rechte vorbehalten</p>
-        <p><a href="../../de/legal.html">Impressum</a> | <a href="../../de/contact.html">Kontakt</a></p>
+        <p><a href="../../de/legal.html">Impressum</a> | <a href="../../de/privacy.html">Datenschutz</a> | <a href="../../de/contact.html">Kontakt</a></p>
     </footer>
     <script src="../../menu.js"></script>
+
+    <!-- RGPD Cookie Banner -->
+    <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#333;color:#fff;padding:16px 20px;z-index:99999;font-family:system-ui,sans-serif;font-size:14px">
+      <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+        <p style="margin:0;flex:1;min-width:250px">
+          Wir verwenden Cookies zur Verkehrsanalyse. Durch Klicken auf &bdquo;Akzeptieren&ldquo; stimmen Sie deren Verwendung zu.
+          <a href="../privacy.html" style="color:#ff69b4;margin-left:8px">Datenschutzerkl&auml;rung</a>
+        </p>
+        <div style="display:flex;gap:10px">
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff69b4;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Akzeptieren</button>
+          <button onclick="refuseCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:2px solid #fff;border-radius:8px;font-weight:700;cursor:pointer">Ablehnen</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function acceptCookies(){
+        localStorage.setItem('cookies_accepted','true');
+        document.getElementById('cookieBanner').style.display='none';
+        loadAnalytics();
+      }
+      function refuseCookies(){
+        localStorage.setItem('cookies_accepted','false');
+        document.getElementById('cookieBanner').style.display='none';
+      }
+      if(!localStorage.getItem('cookies_accepted')){
+        document.getElementById('cookieBanner').style.display='block';
+      }
+    </script>
 </body>
 </html>
