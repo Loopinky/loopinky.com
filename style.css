@@ -507,6 +507,52 @@ nav {
     transform: none;
 }
 
+.freebie-form {
+    margin-top: 24px;
+}
+
+.freebie-form .form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) auto;
+    gap: 12px;
+    align-items: stretch;
+}
+
+.freebie-form input {
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    background: var(--blanc);
+}
+
+.freebie-form input:focus {
+    outline: none;
+    border-color: var(--turquoise-primary);
+    box-shadow: 0 0 0 3px rgba(64, 180, 180, 0.18);
+}
+
+.freebie-form button {
+    border: none;
+    border-radius: 5px;
+    padding: 14px 18px;
+    background: var(--turquoise-dark);
+    color: var(--blanc);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.freebie-form button:hover {
+    background: var(--turquoise-primary);
+}
+
 .btn-cta {
     display: block;
     width: 100%;
@@ -1234,6 +1280,34 @@ footer p {
     background: var(--blanc);
 }
 
+.learn-seo-links {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 70px 20px 0;
+    background: var(--blanc);
+    position: relative;
+    z-index: 2;
+}
+
+.learn-seo-links > h2 {
+    font-size: 2rem;
+    color: var(--noir);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.learn-seo-links > p {
+    max-width: 720px;
+    margin: 0 auto 24px;
+    color: var(--gris-text);
+    text-align: center;
+    line-height: 1.7;
+}
+
+.learn-seo-links .blog-grid {
+    padding-top: 20px;
+}
+
 .blog-card {
     background: var(--blanc);
     border-radius: 10px;
@@ -1664,6 +1738,14 @@ footer p {
 
     .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .freebie-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .learn-seo-links {
+        padding: 50px 20px 0;
     }
 
     .blog-article-header h1 {

@@ -1048,4 +1048,45 @@
     <loc>https://www.loopinky.com/books/kuste-handlettering/</loc>
     <priority>0.75</priority>
   </url>
+  <!-- Learn SEO landing pages -->
+  <url>
+    <loc>https://www.loopinky.com/learn/how-to-draw-comic-bubble-letters/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/free-printable-comic-lettering-alphabet/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/how-to-draw-gothic-letters-for-beginners/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/free-printable-gothic-lettering-practice/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/how-to-draw-beach-calligraphy-letters/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/free-printable-ocean-lettering-worksheets/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/how-to-draw-western-cowboy-letters/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/free-printable-western-lettering-alphabet/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/how-to-draw-cowgirl-cursive-letters/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/learn/free-printable-lettering-practice-sheets-for-kids/</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
