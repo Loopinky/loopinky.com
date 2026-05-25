@@ -16,19 +16,20 @@
     }
   }
   loadAnalytics();
+        if (window.loadClarity) loadClarity();
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loopinky - Calligraphie, Cursive & Lettering Comics</title>
-    <meta name="description" content="Manuels de calligraphie, écriture cursive et lettering comics. Alphabets complets A-Z, styles Western, Beach et plus. Disponibles sur Amazon.">
+    <title>Loopinky - Cahiers de Calligraphie & Lettering Comics</title>
+    <meta name="description" content="Cahiers de calligraphie et lettering comics pour debutants. Pratique les alphabets A-Z, la cursive et les styles BD. Sur Amazon.">
     <link rel="canonical" href="https://www.loopinky.com/fr/">
     <link rel="alternate" hreflang="en" href="https://www.loopinky.com/">
     <link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/">
     <link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/">
     <link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/">
     <link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/">
-    <meta property="og:title" content="Loopinky - Calligraphie, Cursive & Lettering Comics">
-    <meta property="og:description" content="Manuels de calligraphie, écriture cursive et lettering comics. Alphabets complets A-Z. Disponibles sur Amazon.">
+    <meta property="og:title" content="Loopinky - Cahiers de Calligraphie & Lettering Comics">
+    <meta property="og:description" content="Cahiers de calligraphie et lettering comics pour debutants. Alphabets A-Z, cursive et styles BD.">
     <meta property="og:url" content="https://www.loopinky.com/fr/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.loopinky.com/images/EN%201ere%20couv%20comics%201.jpg">
@@ -306,6 +307,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/clarity.js"></script>
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -370,9 +372,8 @@
                 <li>Accès immédiat par email</li>
             </ul>
 
-            <!-- LIEN EMAIL -->
-            <a href="https://mail.google.com/mail/?view=cm&to=loopinky@loopinky.com&su=Demande%20PDF%20Gratuit&body=Bonjour%20!%20Je%20souhaite%20recevoir%20le%20PDF%20HEROINKY%20gratuit.%0A%0AMon%20pr%C3%A9nom%20:%20" class="btn btn-cta">Recevoir mon PDF gratuit</a>
-            <p class="privacy">Pas de spam. Tu peux te désinscrire à tout moment.</p>
+            <button type="button" class="btn btn-cta" data-freebie-popup="popup">Telecharger le PDF gratuit</button>
+            <p class="privacy">Pas de spam. La popup enregistre prenom, email, langue et freebie choisi avant le telechargement.</p>
         </div>
         <div class="lead-preview">
             <video autoplay loop muted playsinline poster="../poster-heroinky.jpg" preload="metadata">
@@ -400,7 +401,10 @@
                     <span>YOOP</span>
                     <span>+6</span>
                 </div>
-                <a href="https://www.amazon.fr/dp/B0G349NY3R" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/comics-lettering-vol-1/" class="btn-details">Voir les details</a>
+                    <a href="https://www.amazon.fr/dp/B0G349NY3R" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                </div>
             </article>
 
             <!-- LIVRE 2 - Comics Lettering Vol.2 -->
@@ -413,7 +417,10 @@
                     <span>10 styles</span>
                     <span>BONUS 50€</span>
                 </div>
-                <a href="https://www.amazon.fr/dp/B0GF8ZRYX9" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/comics-lettering-vol-2/" class="btn-details">Voir les details</a>
+                    <a href="https://www.amazon.fr/dp/B0GF8ZRYX9" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                </div>
             </article>
 
             <!-- LIVRE 3 - Beach Premium -->
@@ -426,7 +433,10 @@
                     <span>PREMIUM</span>
                     <span>210 pages</span>
                 </div>
-                <a href="https://www.amazon.fr/dp/B0FCFF16ZZ" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/calligraphy-lettering-beach/" class="btn-details">Voir les details</a>
+                    <a href="https://www.amazon.fr/dp/B0FCFF16ZZ" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                </div>
             </article>
 
             <!-- LIVRE 4 - Western Cowboy -->
@@ -439,7 +449,10 @@
                     <span>5 styles</span>
                     <span>BONUS</span>
                 </div>
-                <a href="https://www.amazon.fr/dp/B0FJG1YBL7" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/western-cowboy-cursive/" class="btn-details">Voir les details</a>
+                    <a href="https://www.amazon.fr/dp/B0FJG1YBL7" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                </div>
             </article>
 
             <!-- LIVRE 5 - Western Cowgirl -->
@@ -452,7 +465,10 @@
                     <span>5 styles</span>
                     <span>BONUS</span>
                 </div>
-                <a href="https://www.amazon.fr/dp/B0FJ8PDVSV" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/western-cowgirl-cursive/" class="btn-details">Voir les details</a>
+                    <a href="https://www.amazon.fr/dp/B0FJ8PDVSV" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                </div>
             </article>
 
             <!-- LIVRE 6 - By the Sea: Drift -->
@@ -465,7 +481,10 @@
                     <span>5 styles</span>
                     <span>BONUS</span>
                 </div>
-                <a href="https://www.amazon.fr/dp/B0FJ75KZB6" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/by-the-sea-drift/" class="btn-details">Voir les details</a>
+                    <a href="https://www.amazon.fr/dp/B0FJ75KZB6" class="btn-amazon" target="_blank" rel="noopener noreferrer">Acheter sur Amazon</a>
+                </div>
             </article>
         </div>
     </section>
@@ -541,11 +560,17 @@
             <button class="popup-close" onclick="closePopup()">&times;</button>
             <div class="popup-logo">L</div>
             <h2>Salut !<br>Restons en contact !</h2>
-            <p>Entre ton email pour recevoir des téléchargements gratuits, des astuces exclusives et un code promo de 10% !</p>
-            <a href="https://mail.google.com/mail/?view=cm&to=loopinky@loopinky.com&su=Demande%20PDF%20Gratuit&body=Bonjour%20!%20Je%20souhaite%20recevoir%20le%20PDF%20HEROINKY%20gratuit.%0A%0AMon%20pr%C3%A9nom%20:%20" class="btn-popup">Télécharger le PDF !</a>
+            <p>Entre ton prenom et ton email pour telecharger le PDF gratuit.</p>
+            <form class="popup-form freebie-form" data-freebie="HEROINKY" data-download="/Free_Heroinky.pdf" data-language="fr" data-source="popup">
+                <input type="text" name="firstName" placeholder="Prenom" autocomplete="given-name" required>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                <button type="submit" class="btn-popup">Telecharger le PDF</button>
+                <p class="lead-form-status" aria-live="polite"></p>
+            </form>
             <button class="popup-later" onclick="closePopup()">Fermer</button>
         </div>
     </div>
+    <script src="/freebie.js"></script>
 
     <script>
         setTimeout(function() {
@@ -580,10 +605,10 @@
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
         <p style="margin:0;flex:1;min-width:250px">
           Nous utilisons des cookies pour analyser le trafic. En cliquant &laquo; Accepter &raquo;, vous consentez &agrave; leur utilisation.
-          <a href="privacy.html" style="color:#ff69b4;margin-left:8px">Politique de confidentialit&eacute;</a>
+          <a href="privacy.html" style="color:#f6c400;margin-left:8px">Politique de confidentialit&eacute;</a>
         </p>
         <div style="display:flex;gap:10px">
-          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff69b4;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accepter</button>
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#f6c400;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accepter</button>
           <button onclick="refuseCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:2px solid #fff;border-radius:8px;font-weight:700;cursor:pointer">Refuser</button>
         </div>
       </div>
@@ -593,6 +618,7 @@
         localStorage.setItem('cookies_accepted','true');
         document.getElementById('cookieBanner').style.display='none';
         loadAnalytics();
+        if (window.loadClarity) loadClarity();
       }
       function refuseCookies(){
         localStorage.setItem('cookies_accepted','false');

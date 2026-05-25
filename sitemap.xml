@@ -9,6 +9,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/"/>
     <priority>1.0</priority>
   </url>
   <url>
@@ -17,6 +18,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/"/>
     <priority>1.0</priority>
   </url>
   <url>
@@ -25,6 +27,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/"/>
     <priority>1.0</priority>
   </url>
   <url>
@@ -33,6 +36,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/"/>
     <priority>1.0</priority>
   </url>
 
@@ -67,6 +71,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/blog/"/>
     <priority>0.8</priority>
   </url>
   <url>
@@ -75,6 +80,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/blog/"/>
     <priority>0.8</priority>
   </url>
   <url>
@@ -83,6 +89,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/blog/"/>
     <priority>0.8</priority>
   </url>
   <url>
@@ -91,6 +98,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/blog/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/blog/"/>
     <priority>0.8</priority>
   </url>
 
@@ -1011,5 +1019,33 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/blog/lettering-comics-disenadores-graficos.html"/>
     <priority>0.7</priority>
   </url>
-
+  <!-- Product Pages -->
+  <url>
+    <loc>https://www.loopinky.com/books/comics-lettering-vol-1/</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/books/comics-lettering-vol-2/</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/books/calligraphy-lettering-beach/</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/books/western-cowboy-cursive/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/books/western-cowgirl-cursive/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/books/by-the-sea-drift/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.loopinky.com/books/kuste-handlettering/</loc>
+    <priority>0.75</priority>
+  </url>
 </urlset>

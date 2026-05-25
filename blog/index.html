@@ -16,6 +16,7 @@
     }
   }
   loadAnalytics();
+        if (window.loadClarity) loadClarity();
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/clarity.js"></script>
 </head>
 <body>
     <header>
@@ -333,6 +335,17 @@
         </article>
     </div>
 
+    <section class="book-section">
+        <h2>Explore Loopinky workbooks</h2>
+        <p>Each workbook now has a dedicated guide with practice details, page count and Amazon link.</p>
+        <div class="book-grid">
+            <div class="book-panel"><h3>Comics Lettering Vol.1</h3><p>10 bold comic font styles in a 210-page workbook.</p><a href="/books/comics-lettering-vol-1/" class="btn-details">View details</a></div>
+            <div class="book-panel"><h3>Comics Lettering Vol.2</h3><p>More dynamic comic lettering styles for expressive projects.</p><a href="/books/comics-lettering-vol-2/" class="btn-details">View details</a></div>
+            <div class="book-panel"><h3>Beach Calligraphy</h3><p>Premium seaside calligraphy practice with decorative layouts.</p><a href="/books/calligraphy-lettering-beach/" class="btn-details">View details</a></div>
+            <div class="book-panel"><h3>Western Cursive</h3><p>Cowboy and cowgirl cursive workbooks for themed lettering.</p><a href="/books/western-cowboy-cursive/" class="btn-details">View details</a></div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Loopinky - All rights reserved</p>
         <p><a href="../legal.html">Legal notice</a> | <a href="../privacy.html">Privacy policy</a> | <a href="../contact.html">Contact</a></p>
@@ -344,10 +357,10 @@
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
         <p style="margin:0;flex:1;min-width:250px">
           We use cookies to analyze traffic. By clicking "Accept", you consent to our use of cookies.
-          <a href="../privacy.html" style="color:#ff69b4;margin-left:8px">Privacy Policy</a>
+          <a href="../privacy.html" style="color:#f6c400;margin-left:8px">Privacy Policy</a>
         </p>
         <div style="display:flex;gap:10px">
-          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff69b4;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accept</button>
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#f6c400;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accept</button>
           <button onclick="refuseCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:2px solid #fff;border-radius:8px;font-weight:700;cursor:pointer">Refuse</button>
         </div>
       </div>
@@ -357,6 +370,7 @@
         localStorage.setItem('cookies_accepted','true');
         document.getElementById('cookieBanner').style.display='none';
         loadAnalytics();
+        if (window.loadClarity) loadClarity();
       }
       function refuseCookies(){
         localStorage.setItem('cookies_accepted','false');

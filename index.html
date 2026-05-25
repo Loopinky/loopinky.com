@@ -17,19 +17,20 @@
     }
   }
   loadAnalytics();
+        if (window.loadClarity) loadClarity();
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loopinky - Modern Lettering, Calligraphy & Comics Lettering Workbooks</title>
-    <meta name="description" content="Modern lettering, calligraphy and comics lettering practice workbooks. Calligraphy alphabet styles, faux calligraphy, cursive handwriting. Complete A-Z alphabets. Available on Amazon.">
+    <title>Loopinky - Comics Lettering & Calligraphy Workbooks</title>
+    <meta name="description" content="Comics lettering and calligraphy workbooks for beginners. Practice A-Z alphabets, cursive styles and bold comic fonts. Available on Amazon.">
     <link rel="canonical" href="https://www.loopinky.com/">
     <link rel="alternate" hreflang="en" href="https://www.loopinky.com/">
     <link rel="alternate" hreflang="fr" href="https://www.loopinky.com/fr/">
     <link rel="alternate" hreflang="de" href="https://www.loopinky.com/de/">
     <link rel="alternate" hreflang="es" href="https://www.loopinky.com/es/">
     <link rel="alternate" hreflang="x-default" href="https://www.loopinky.com/">
-    <meta property="og:title" content="Loopinky - Modern Lettering, Calligraphy & Comics Lettering Workbooks">
-    <meta property="og:description" content="Modern lettering, calligraphy and comics lettering practice workbooks. Cursive handwriting, bold styles, complete A-Z alphabets. Available on Amazon.">
+    <meta property="og:title" content="Loopinky - Comics Lettering & Calligraphy Workbooks">
+    <meta property="og:description" content="Comics lettering and calligraphy workbooks for beginners. Practice A-Z alphabets, cursive styles and bold comic fonts.">
     <meta property="og:url" content="https://www.loopinky.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.loopinky.com/images/EN%201ere%20couv%20comics%201.jpg">
@@ -43,7 +44,7 @@
       "@type": "WebSite",
       "name": "Loopinky",
       "url": "https://www.loopinky.com",
-      "description": "Modern lettering, calligraphy and comics lettering practice workbooks. Cursive handwriting, bold styles, complete A-Z alphabets.",
+      "description": "Comics lettering and calligraphy workbooks for beginners. Practice A-Z alphabets, cursive styles and bold comic fonts.",
       "publisher": {
         "@type": "Organization",
         "name": "Loopinky",
@@ -310,6 +311,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/clarity.js"></script>
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -374,10 +376,8 @@
                 <li>Instant access by email</li>
             </ul>
 
-            <!-- EMAIL LINKS -->
-            <a href="https://mail.google.com/mail/?view=cm&to=loopinky@loopinky.com&su=Free%20HEROINKY%20PDF%20Request&body=Hi!%20I%20would%20like%20to%20receive%20the%20free%20HEROINKY%20PDF.%0A%0AMy%20first%20name:%20" class="btn btn-cta" target="_blank" rel="noopener noreferrer">📧 Request via Gmail</a>
-            <a href="mailto:loopinky@loopinky.com?subject=Free%20HEROINKY%20PDF%20Request&body=Hi!%20I%20would%20like%20to%20receive%20the%20free%20HEROINKY%20PDF.%0A%0AMy%20first%20name:%20" class="btn btn-secondary" style="margin-left:10px">📬 Other email app</a>
-            <p class="privacy">Add your first name, then send. We'll reply with your PDF!<br><strong>Email:</strong> loopinky@loopinky.com</p>
+            <button type="button" class="btn btn-cta" data-freebie-popup="popup">Download my free PDF</button>
+            <p class="privacy">No spam. The popup saves your first name, email, language and selected freebie before download.</p>
         </div>
         <div class="lead-preview">
             <video autoplay loop muted playsinline poster="poster-heroinky.jpg" preload="metadata">
@@ -405,7 +405,10 @@
                     <span>YOOP</span>
                     <span>+6</span>
                 </div>
-                <a href="https://www.amazon.com/dp/B0FFMMVVSD" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/comics-lettering-vol-1/" class="btn-details">View details</a>
+                    <a href="https://www.amazon.com/dp/B0FFMMVVSD" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                </div>
             </article>
 
             <!-- BOOK 2 - Comics Lettering Vol.2 -->
@@ -418,7 +421,10 @@
                     <span>10 styles</span>
                     <span>BONUS $50</span>
                 </div>
-                <a href="https://www.amazon.com/dp/B0GF8ZRYX9" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/comics-lettering-vol-2/" class="btn-details">View details</a>
+                    <a href="https://www.amazon.com/dp/B0GF8ZRYX9" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                </div>
             </article>
 
             <!-- BOOK 3 - Beach Premium -->
@@ -431,7 +437,10 @@
                     <span>PREMIUM</span>
                     <span>210 pages</span>
                 </div>
-                <a href="https://www.amazon.com/dp/B0FCFF16ZZ" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/calligraphy-lettering-beach/" class="btn-details">View details</a>
+                    <a href="https://www.amazon.com/dp/B0FCFF16ZZ" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                </div>
             </article>
 
             <!-- BOOK 4 - Western Cowboy -->
@@ -444,7 +453,10 @@
                     <span>5 styles</span>
                     <span>BONUS</span>
                 </div>
-                <a href="https://www.amazon.com/dp/B0FJG1YBL7" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/western-cowboy-cursive/" class="btn-details">View details</a>
+                    <a href="https://www.amazon.com/dp/B0FJG1YBL7" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                </div>
             </article>
 
             <!-- BOOK 5 - Western Cowgirl -->
@@ -457,7 +469,10 @@
                     <span>5 styles</span>
                     <span>BONUS</span>
                 </div>
-                <a href="https://www.amazon.com/dp/B0FJ8PDVSV" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/western-cowgirl-cursive/" class="btn-details">View details</a>
+                    <a href="https://www.amazon.com/dp/B0FJ8PDVSV" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                </div>
             </article>
 
             <!-- BOOK 6 - By the Sea: Drift -->
@@ -470,7 +485,10 @@
                     <span>5 styles</span>
                     <span>BONUS</span>
                 </div>
-                <a href="https://www.amazon.com/dp/B0FJ75KZB6" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                <div class="book-actions">
+                    <a href="/books/by-the-sea-drift/" class="btn-details">View details</a>
+                    <a href="https://www.amazon.com/dp/B0FJ75KZB6" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                </div>
             </article>
         </div>
     </section>
@@ -546,13 +564,17 @@
             <button class="popup-close" onclick="closePopup()">&times;</button>
             <div class="popup-logo">L</div>
             <h2>Hi there!<br>Let's be friends!</h2>
-            <p>Send us an email with your first name to get your free PDF!</p>
-            <a href="https://mail.google.com/mail/?view=cm&to=loopinky@loopinky.com&su=Free%20HEROINKY%20PDF%20Request&body=Hi!%20I%20would%20like%20to%20receive%20the%20free%20HEROINKY%20PDF.%0A%0AMy%20first%20name:%20" class="btn-popup" target="_blank" rel="noopener noreferrer">📧 Gmail</a>
-            <a href="mailto:loopinky@loopinky.com?subject=Free%20HEROINKY%20PDF%20Request&body=Hi!%20I%20would%20like%20to%20receive%20the%20free%20HEROINKY%20PDF.%0A%0AMy%20first%20name:%20" class="btn-popup" style="background:#fff;color:#ff69b4;border:2px solid #ff69b4;margin-top:8px">📬 Other</a>
-            <p style="font-size:0.8em;margin-top:10px;opacity:0.8">loopinky@loopinky.com</p>
+            <p>Enter your first name and email to get your free PDF!</p>
+            <form class="popup-form freebie-form" data-freebie="HEROINKY" data-download="/Free_Heroinky.pdf" data-language="en" data-source="popup">
+                <input type="text" name="firstName" placeholder="First name" autocomplete="given-name" required>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                <button type="submit" class="btn-popup">Download PDF</button>
+                <p class="lead-form-status" aria-live="polite"></p>
+            </form>
             <button class="popup-later" onclick="closePopup()">Close</button>
         </div>
     </div>
+    <script src="/freebie.js"></script>
 
     <script>
         // Show popup after 3 seconds
@@ -589,10 +611,10 @@
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
         <p style="margin:0;flex:1;min-width:250px">
           We use cookies to analyze traffic. By clicking "Accept", you consent to our use of cookies.
-          <a href="legal.html" style="color:#ff69b4;margin-left:8px">Privacy Policy</a>
+          <a href="legal.html" style="color:#f6c400;margin-left:8px">Privacy Policy</a>
         </p>
         <div style="display:flex;gap:10px">
-          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff69b4;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accept</button>
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#f6c400;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accept</button>
           <button onclick="refuseCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:2px solid #fff;border-radius:8px;font-weight:700;cursor:pointer">Refuse</button>
         </div>
       </div>
@@ -602,6 +624,7 @@
         localStorage.setItem('cookies_accepted','true');
         document.getElementById('cookieBanner').style.display='none';
         loadAnalytics();
+        if (window.loadClarity) loadClarity();
       }
       function refuseCookies(){
         localStorage.setItem('cookies_accepted','false');

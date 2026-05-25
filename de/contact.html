@@ -16,6 +16,7 @@
     }
   }
   loadAnalytics();
+        if (window.loadClarity) loadClarity();
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <script src="/clarity.js"></script>
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -117,10 +119,10 @@
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
         <p style="margin:0;flex:1;min-width:250px">
           Wir verwenden Cookies zur Verkehrsanalyse. Durch Klicken auf &bdquo;Akzeptieren&ldquo; stimmen Sie deren Verwendung zu.
-          <a href="privacy.html" style="color:#ff69b4;margin-left:8px">Datenschutzerkl&auml;rung</a>
+          <a href="privacy.html" style="color:#f6c400;margin-left:8px">Datenschutzerkl&auml;rung</a>
         </p>
         <div style="display:flex;gap:10px">
-          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff69b4;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Akzeptieren</button>
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#f6c400;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Akzeptieren</button>
           <button onclick="refuseCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:2px solid #fff;border-radius:8px;font-weight:700;cursor:pointer">Ablehnen</button>
         </div>
       </div>
@@ -130,6 +132,7 @@
         localStorage.setItem('cookies_accepted','true');
         document.getElementById('cookieBanner').style.display='none';
         loadAnalytics();
+        if (window.loadClarity) loadClarity();
       }
       function refuseCookies(){
         localStorage.setItem('cookies_accepted','false');

@@ -485,6 +485,28 @@ nav {
     margin-top: 5px;
 }
 
+.lead-form-status {
+    min-height: 1.25em;
+    margin: 8px 0 0;
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--gris-text);
+}
+
+.freebie-success {
+    color: #2f7d32;
+}
+
+.freebie-error {
+    color: #b3261e;
+}
+
+.freebie-form button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
 .btn-cta {
     display: block;
     width: 100%;
@@ -681,6 +703,145 @@ nav {
     background: #e68a00;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(255, 153, 0, 0.3);
+}
+
+.book-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-details {
+    display: inline-block;
+    background: var(--noir);
+    color: var(--blanc);
+    padding: 14px 35px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.btn-details:hover {
+    background: var(--turquoise-dark);
+    transform: translateY(-3px);
+}
+
+.book-page {
+    padding-top: 100px;
+}
+
+.breadcrumb {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 28px 5% 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    color: var(--gris-text);
+}
+
+.breadcrumb a {
+    color: var(--turquoise-dark);
+    text-decoration: none;
+}
+
+.book-hero {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 55px 5% 50px;
+    display: grid;
+    grid-template-columns: minmax(260px, 390px) 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.book-cover img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.book-kicker {
+    color: var(--turquoise-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.book-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.book-summary {
+    font-size: 1.18rem;
+    color: var(--gris-text);
+    line-height: 1.7;
+    margin-bottom: 26px;
+}
+
+.book-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.book-meta span {
+    background: var(--turquoise-light);
+    color: var(--noir);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.book-section {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 55px 5%;
+}
+
+.book-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.book-section p,
+.book-section li {
+    color: var(--gris-text);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.book-panel {
+    border: 1px solid var(--gris);
+    border-radius: 8px;
+    padding: 24px;
+    background: var(--blanc);
+}
+
+.book-panel h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
 }
 
 /* Coming Soon */
@@ -1378,6 +1539,25 @@ footer p {
    RESPONSIVE
    =========================================== */
 @media (max-width: 768px) {
+    .book-page {
+        padding-top: 80px;
+    }
+
+    .book-hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-top: 36px;
+    }
+
+    .book-cover {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hamburger {
         display: flex;
     }

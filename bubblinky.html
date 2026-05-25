@@ -16,6 +16,7 @@
     }
   }
   loadAnalytics();
+        if (window.loadClarity) loadClarity();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,38 +26,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Montserrat',sans-serif;background:linear-gradient(135deg,#fff5f8 0%,#f0f4ff 100%);min-height:100vh;color:#333}
+body{font-family:'Montserrat',sans-serif;background:linear-gradient(135deg,#fff9e6 0%,#f0f4ff 100%);min-height:100vh;color:#333}
 .container{max-width:900px;margin:0 auto;padding:40px 20px;text-align:center}
 header{margin-bottom:30px}
-.logo{font-size:1.8em;font-weight:800;color:#ff69b4;text-decoration:none}
+.logo{font-size:1.8em;font-weight:800;color:#f6c400;text-decoration:none}
 h1{font-size:2.4em;font-weight:800;margin:20px 0 10px;color:#333}
-h1 span{color:#ff69b4}
+h1 span{color:#f6c400}
 .subtitle{font-size:1.1em;color:#666;margin-bottom:30px}
 .content{display:flex;gap:40px;align-items:center;flex-wrap:wrap;justify-content:center}
 .video-box{flex:1;min-width:300px;max-width:400px}
-.video-box video{width:100%;border-radius:20px;box-shadow:0 12px 40px rgba(255,105,180,.2)}
+.video-box video{width:100%;border-radius:20px;box-shadow:0 12px 40px rgba(246,196,0,.22)}
 .form-box{flex:1;min-width:300px;max-width:400px;background:#fff;padding:32px;border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.form-box h2{font-size:1.4em;margin-bottom:8px;color:#ff69b4}
+.form-box h2{font-size:1.4em;margin-bottom:8px;color:#f6c400}
 .form-box p{font-size:.95em;color:#666;margin-bottom:20px}
 .benefits{text-align:left;margin:20px 0;padding-left:0;list-style:none}
 .benefits li{padding:8px 0;font-size:.95em;color:#444}
-.benefits li::before{content:'✓';color:#ff69b4;font-weight:700;margin-right:10px}
+.benefits li::before{content:'✓';color:#f6c400;font-weight:700;margin-right:10px}
 form{display:flex;flex-direction:column;gap:14px}
-input{padding:14px 18px;border:2px solid #f0d0e0;border-radius:14px;font-size:1em;font-family:inherit;outline:none;transition:border-color .2s}
-input:focus{border-color:#ff69b4}
-button{padding:16px;background:#ff69b4;color:#fff;border:none;border-radius:14px;font-size:1.1em;font-weight:700;cursor:pointer;transition:background .2s}
-button:hover{background:#ff4da6}
-button:disabled{opacity:.6;cursor:not-allowed}
+input{padding:14px 18px;border:2px solid #ffe08a;border-radius:14px;font-size:1em;font-family:inherit;outline:none;transition:border-color .2s}
+input:focus{border-color:#f6c400}
+button{padding:16px;background:#f6c400;color:#fff;border:none;border-radius:14px;font-size:1.1em;font-weight:700;cursor:pointer;transition:background .2s}
+button:hover{background:#e0a800}
+button:disabled{opacity:.6;cursor:not-allowed}.lead-form-status{min-height:1.25em;font-size:.85em;color:#666}.freebie-success{color:#2e7d32}.freebie-error{color:#b3261e}
 .disclaimer{font-size:.8em;color:#999;margin-top:14px}
 .success{display:none;text-align:center}
 .success h3{color:#2e7d32;font-size:1.3em;margin-bottom:12px}
 .success p{color:#666;margin-bottom:20px}
-.success a{display:inline-block;padding:14px 28px;background:#ff69b4;color:#fff;text-decoration:none;border-radius:14px;font-weight:700}
-.back{display:block;margin-top:40px;color:#ff69b4;text-decoration:none;font-weight:600}
+.success a{display:inline-block;padding:14px 28px;background:#f6c400;color:#fff;text-decoration:none;border-radius:14px;font-weight:700}
+.back{display:block;margin-top:40px;color:#f6c400;text-decoration:none;font-weight:600}
 .back:hover{text-decoration:underline}
 .lang-toggle{display:flex;gap:8px;justify-content:center;margin-top:16px}
-.lang-btn{padding:6px 16px;border-radius:20px;border:2px solid #ff69b4;background:#fff;color:#ff69b4;font-weight:700;cursor:pointer;font-size:.9em;text-decoration:none}
-.lang-btn.active{background:#ff69b4;color:#fff}
+.lang-btn{padding:6px 16px;border-radius:20px;border:2px solid #f6c400;background:#fff;color:#f6c400;font-weight:700;cursor:pointer;font-size:.9em;text-decoration:none}
+.lang-btn.active{background:#f6c400;color:#fff}
 span[data-lang="fr"],span[data-lang="es"],span[data-lang="de"]{display:none}
 body.fr span[data-lang="fr"]{display:inline}
 body.fr span[data-lang="en"]{display:none}
@@ -69,6 +70,7 @@ body.de span[data-lang="en"]{display:none}
   .content{flex-direction:column}
 }
 </style>
+    <script src="/clarity.js"></script>
 </head>
 <body>
 
@@ -106,33 +108,32 @@ body.de span[data-lang="en"]{display:none}
         <span data-lang="es">¡Descarga el PDF GRATIS!</span>
       </h2>
       <p>
-        <span data-lang="en">Send us an email with your first name and we'll send you the PDF!</span>
-        <span data-lang="fr">Envoie-nous un email avec ton prénom et on t'envoie le PDF !</span>
-        <span data-lang="de">Sende uns eine E-Mail mit deinem Vornamen und wir schicken dir das PDF!</span>
-        <span data-lang="es">¡Envíanos un email con tu nombre y te enviamos el PDF!</span>
+        <span data-lang="en">Enter your first name and email to download the PDF.</span>
+        <span data-lang="fr">Entre ton prenom et ton email pour telecharger le PDF.</span>
+        <span data-lang="de">Gib deinen Vornamen und deine E-Mail ein, um das PDF herunterzuladen.</span>
+        <span data-lang="es">Introduce tu nombre y email para descargar el PDF.</span>
       </p>
       <ul class="benefits">
         <li><span data-lang="en">Complete A-Z bubble alphabet</span><span data-lang="fr">Alphabet bulles A-Z complet</span><span data-lang="de">Komplettes A-Z Bubble-Alphabet</span><span data-lang="es">Alfabeto burbuja A-Z completo</span></li>
         <li><span data-lang="en">Step-by-step tracing guides</span><span data-lang="fr">Guides de traçage étape par étape</span><span data-lang="de">Schritt-für-Schritt Anleitungen</span><span data-lang="es">Guías de trazado paso a paso</span></li>
         <li><span data-lang="en">High quality PDF to print</span><span data-lang="fr">PDF haute qualité à imprimer</span><span data-lang="de">Hochwertiges PDF zum Drucken</span><span data-lang="es">PDF de alta calidad para imprimir</span></li>
       </ul>
-      <a href="https://mail.google.com/mail/?view=cm&to=loopinky@loopinky.com&su=Free%20Bubblinky%20PDF%20Request&body=Hi!%20I%20would%20like%20to%20receive%20the%20free%20Bubblinky%20PDF.%0A%0AMy%20first%20name:%20" target="_blank" rel="noopener noreferrer" class="btn-cta" style="display:inline-block;padding:16px 24px;background:#ff69b4;color:#fff;border:none;border-radius:14px;font-size:1.1em;font-weight:700;text-decoration:none;transition:background .2s;margin-bottom:10px">
-        <span data-lang="en">📧 Request via Gmail</span>
-        <span data-lang="fr">📧 Demander via Gmail</span>
-        <span data-lang="de">📧 Per Gmail anfordern</span>
-        <span data-lang="es">📧 Solicitar via Gmail</span>
-      </a>
-      <a href="mailto:loopinky@loopinky.com?subject=Free%20Bubblinky%20PDF%20Request&body=Hi!%20I%20would%20like%20to%20receive%20the%20free%20Bubblinky%20PDF.%0A%0AMy%20first%20name:%20" class="btn-alt" style="display:inline-block;padding:12px 20px;background:#fff;color:#ff69b4;border:2px solid #ff69b4;border-radius:14px;font-size:1em;font-weight:700;text-decoration:none;transition:background .2s">
-        <span data-lang="en">📬 Other email app</span>
-        <span data-lang="fr">📬 Autre messagerie</span>
-        <span data-lang="de">📬 Andere E-Mail-App</span>
-        <span data-lang="es">📬 Otra app de correo</span>
-      </a>
+      <form class="freebie-form" data-freebie="BUBBLINKY" data-download="/bubblinky.pdf" data-language="en" data-source="bubblinky-page">
+        <input type="text" name="firstName" placeholder="First name / Prenom / Vorname / Nombre" autocomplete="given-name" required>
+        <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+        <button type="submit">
+          <span data-lang="en">Download the PDF</span>
+          <span data-lang="fr">Telecharger le PDF</span>
+          <span data-lang="de">PDF herunterladen</span>
+          <span data-lang="es">Descargar PDF</span>
+        </button>
+        <p class="lead-form-status" aria-live="polite"></p>
+      </form>
       <p class="disclaimer" style="margin-top:16px">
-        <span data-lang="en">Add your first name in the email, then hit send. We'll reply with your PDF!<br><strong>Email:</strong> loopinky@loopinky.com</span>
-        <span data-lang="fr">Ajoute ton prénom dans l'email, puis envoie. On te répond avec ton PDF !<br><strong>Email :</strong> loopinky@loopinky.com</span>
-        <span data-lang="de">Füge deinen Vornamen in die E-Mail ein und sende ab. Wir antworten mit deinem PDF!<br><strong>E-Mail:</strong> loopinky@loopinky.com</span>
-        <span data-lang="es">Agrega tu nombre en el email y envía. ¡Te respondemos con tu PDF!<br><strong>Email:</strong> loopinky@loopinky.com</span>
+        <span data-lang="en">Your details are saved to send this free PDF and Loopinky updates.</span>
+        <span data-lang="fr">Tes coordonnees servent a envoyer ce PDF gratuit et les nouvelles Loopinky.</span>
+        <span data-lang="de">Deine Daten werden fuer dieses kostenlose PDF und Loopinky Updates gespeichert.</span>
+        <span data-lang="es">Tus datos se guardan para enviar este PDF gratis y novedades de Loopinky.</span>
       </p>
     </div>
   </div>
@@ -145,6 +146,7 @@ body.de span[data-lang="en"]{display:none}
   </a>
 </div>
 
+<script src="/freebie.js"></script>
 <script>
 function setLang(lang){
   document.body.className = lang === 'en' ? '' : lang;
@@ -152,6 +154,7 @@ function setLang(lang){
     b.classList.toggle('active', b.textContent === lang.toUpperCase());
   });
   document.documentElement.lang = lang;
+  document.querySelectorAll('.freebie-form').forEach(function(form){ form.setAttribute('data-language', lang); });
 }
 </script>
 
@@ -160,10 +163,10 @@ function setLang(lang){
       <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
         <p style="margin:0;flex:1;min-width:250px">
           We use cookies to analyze traffic. By clicking "Accept", you consent to our use of cookies.
-          <a href="privacy.html" style="color:#ff69b4;margin-left:8px">Privacy Policy</a>
+          <a href="privacy.html" style="color:#f6c400;margin-left:8px">Privacy Policy</a>
         </p>
         <div style="display:flex;gap:10px">
-          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff69b4;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accept</button>
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#f6c400;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">Accept</button>
           <button onclick="refuseCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:2px solid #fff;border-radius:8px;font-weight:700;cursor:pointer">Refuse</button>
         </div>
       </div>
@@ -173,6 +176,7 @@ function setLang(lang){
         localStorage.setItem('cookies_accepted','true');
         document.getElementById('cookieBanner').style.display='none';
         loadAnalytics();
+        if (window.loadClarity) loadClarity();
       }
       function refuseCookies(){
         localStorage.setItem('cookies_accepted','false');
