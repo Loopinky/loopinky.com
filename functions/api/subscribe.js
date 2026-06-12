@@ -63,6 +63,38 @@ export async function onRequestPost({ request, env }) {
 
   let savedToGoogleSheets = false;
   let savedToBrevo = false;
+  let savedToDownloadsDb = false;
+
+  if (env.DOWNLOADS_DB) {
+    try {
+      await env.DOWNLOADS_DB.prepare(`
+        INSERT INTO downloads (
+          created_at,
+          name,
+          email,
+          lang,
+          freebie,
+          download,
+          source,
+          page,
+          user_agent
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).bind(
+        createdAt,
+        name,
+        email,
+        lang,
+        freebie,
+        download,
+        source,
+        page,
+        userAgent
+      ).run();
+      savedToDownloadsDb = true;
+    } catch {
+      savedToDownloadsDb = false;
+    }
+  }
 
   if (env.GOOGLE_SHEETS_WEBHOOK_URL) {
     try {
@@ -116,8 +148,10 @@ export async function onRequestPost({ request, env }) {
 
   return json({
     success: true,
+    savedToDownloadsDb,
     savedToGoogleSheets,
     savedToBrevo,
+    downloadsDbSkipped: !env.DOWNLOADS_DB,
     brevoSkipped: !env.BREVO_API_KEY,
     sheetsSkipped: !env.GOOGLE_SHEETS_WEBHOOK_URL,
   }, { headers: cors });

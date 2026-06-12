@@ -1,0 +1,8 @@
+name = "loopinky"
+pages_build_output_dir = "."
+compatibility_date = "2026-06-12"
+
+[[d1_databases]]
+binding = "DOWNLOADS_DB"
+database_name = "loopinky_downloads"
+database_id = "898e3c07-112b-4f3a-a942-bce0a0c3e970"
