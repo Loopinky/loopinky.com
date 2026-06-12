@@ -190,13 +190,6 @@ export async function onRequestPost({ request, env }) {
           email,
           first_name: name,
           unsubscribed: false,
-          properties: {
-            lang,
-            freebie,
-            download,
-            source,
-            page,
-          },
           segments,
         }),
       });
@@ -211,13 +204,6 @@ export async function onRequestPost({ request, env }) {
           },
           body: JSON.stringify({
             unsubscribed: false,
-            properties: {
-              lang,
-              freebie,
-              download,
-              source,
-              page,
-            },
           }),
         });
         savedToSendit = updateResponse.ok;
