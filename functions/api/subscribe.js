@@ -175,6 +175,58 @@ export async function onRequestPost({ request, env }) {
     }
   }
 
+  if (env.RESEND_API_KEY) {
+    try {
+      const segments = env.RESEND_SEGMENT_ID
+        ? [{ id: env.RESEND_SEGMENT_ID }]
+        : undefined;
+      const resendResponse = await fetch('https://api.resend.com/contacts', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          first_name: name,
+          unsubscribed: false,
+          properties: {
+            lang,
+            freebie,
+            download,
+            source,
+            page,
+          },
+          segments,
+        }),
+      });
+      savedToSendit = resendResponse.ok;
+
+      if (!savedToSendit && resendResponse.status === 409) {
+        const updateResponse = await fetch(`https://api.resend.com/contacts/${encodeURIComponent(email)}`, {
+          method: 'PATCH',
+          headers: {
+            Authorization: `Bearer ${env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            unsubscribed: false,
+            properties: {
+              lang,
+              freebie,
+              download,
+              source,
+              page,
+            },
+          }),
+        });
+        savedToSendit = updateResponse.ok;
+      }
+    } catch {
+      savedToSendit = false;
+    }
+  }
+
   return json({
     success: true,
     savedToDownloadsDb,
@@ -183,7 +235,7 @@ export async function onRequestPost({ request, env }) {
     savedToSendit,
     downloadsDbSkipped: !env.DOWNLOADS_DB,
     brevoSkipped: !env.BREVO_API_KEY,
-    senditSkipped: !env.SENDIT_WEBHOOK_URL,
+    senditSkipped: !env.SENDIT_WEBHOOK_URL && !env.RESEND_API_KEY,
     sheetsSkipped: !env.GOOGLE_SHEETS_WEBHOOK_URL,
   }, { headers: cors });
 }
