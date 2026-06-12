@@ -63,6 +63,7 @@ export async function onRequestPost({ request, env }) {
 
   let savedToGoogleSheets = false;
   let savedToBrevo = false;
+  let savedToSendit = false;
   let savedToDownloadsDb = false;
 
   if (env.DOWNLOADS_DB) {
@@ -146,13 +147,43 @@ export async function onRequestPost({ request, env }) {
     }
   }
 
+  if (env.SENDIT_WEBHOOK_URL) {
+    try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (env.SENDIT_API_KEY) {
+        headers.Authorization = `Bearer ${env.SENDIT_API_KEY}`;
+      }
+
+      const senditResponse = await fetch(env.SENDIT_WEBHOOK_URL, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          createdAt,
+          name,
+          email,
+          lang,
+          freebie,
+          download,
+          source,
+          page,
+          userAgent,
+        }),
+      });
+      savedToSendit = senditResponse.ok;
+    } catch {
+      savedToSendit = false;
+    }
+  }
+
   return json({
     success: true,
     savedToDownloadsDb,
     savedToGoogleSheets,
     savedToBrevo,
+    savedToSendit,
     downloadsDbSkipped: !env.DOWNLOADS_DB,
     brevoSkipped: !env.BREVO_API_KEY,
+    senditSkipped: !env.SENDIT_WEBHOOK_URL,
     sheetsSkipped: !env.GOOGLE_SHEETS_WEBHOOK_URL,
   }, { headers: cors });
 }
